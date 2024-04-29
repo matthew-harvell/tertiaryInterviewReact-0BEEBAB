@@ -1,23 +1,18 @@
 class StringUtils {
   manipulateString = (input) => {
     /*
-        Given a string in the English alphabet utilizing only upper case and lower case letters (i.e., A-Z and a-z only),
-        create a new string which consists of the opposite case (lower to upper and vice versa)
-        which is also reversed in character order from the original.  E.g., "ABCD" would become "dcba". If the character is NOT
-        a letter character, remove it from the result.   For reference and if it helps, the character values of the upper case 
-        number are 65 - 90 and the lower case letters are 32 above the corresponding upper case. Try to keep in mind that all
-        primitive values (such as string, number, boolean...) are immutable in JavaScript - try to keep
-        the amount of memory allocations as low as possible.  
+        You are given a string consisting of alphanumeric characters in the English alphabet.  Namely, the string will constist of the characters [A-Za-z0-9] (A through Z capitalized and lowercase as well as the digits from 0 to 9).
+        After a lot of discussion the product team has decided that every string needs to be stored in a format that has the character 
+        (converted to lowercase) followed by the number of times it shows up in the string enclosed in curly brackets.  
+        If the character is a number then it remains unchanged excepting that it has the number of occurances following (in brackets as shown in the examples.)
+        Some examples:
+        input string is "AbcdeAAaar3d5" would need to be returned as the string "a{5}b{1}c{1}d{2}e{1}r{1}3{1}5{1}".
+        input string is "abstuuuv" would be returned as "a{1}b{1}s{1}t{1}u{3}v{1}".
+        input string is "123aaabbb" would be returned as "1{1}2{1}3{1}a{3}b{3}".
+        Try to keep in mind that every native variable in JavaScript is immutable.  Keep memory allocations as low as possible.
     */
-        if(typeof input !== 'string') throw new TypeError('Input must be convertible to string');
-        const alphaOnlyInput = [...input.matchAll(/[A-Za-z]/g)].map(m=>m[0].toUpperCase() === m[0]?m[0].toLowerCase():m[0].toUpperCase());
-        for (let i = 0,e = alphaOnlyInput.length-1; i < Math.floor(alphaOnlyInput.length/2); e--, i++ ){
-          let temp = alphaOnlyInput[i];
-          alphaOnlyInput[i] = alphaOnlyInput[e];
-          alphaOnlyInput[e] = temp;
-        }
-        return alphaOnlyInput.join('');
-  };
+    throw new Error('Not implemented');
+  }
 }
 
 module.exports = StringUtils;
